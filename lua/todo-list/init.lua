@@ -6,14 +6,13 @@ local search = require("todo-list.search")
 
 function M.setup(opts)
     config.setup(opts or {})
-
     vim.api.nvim_create_user_command("ShowTodos", function()
         M.show_todos()
     end, {})
 
-    -- Default keymap
+    -- Call ui.toggle directly instead of through M.toggle
     vim.keymap.set("n", "<C-t>", function()
-        M.toggle()
+        require("todo-list.ui").toggle()
     end, { noremap = true, silent = true })
 end
 
