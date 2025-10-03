@@ -12,7 +12,7 @@ Organize and navigate all TODOs directly from the source code, in a floating, re
 - Lightweight, read-only buffer that does not modify files.
 - Configurable key mappings and ignored directories.
 
-### Installation
+## Installation
 
 ### [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
@@ -46,7 +46,7 @@ require("todo-list.config").setup({
 EOF
 ```
 
-### Configuration
+## Configuration
 | Option            | Default           | Description                                                                                |
 |------------------|-----------------|----------------------------------------------------------------------------------------------|
 | `blacklist`       | See defaults     | List of glob patterns to ignore when scanning for TODOs                                     |
@@ -55,7 +55,7 @@ EOF
 | `cursorline`      | `true`           | Highlight the current line in the floating window                                           |
 | `cursorline_bg`   | theme CursorLine | Background color for the cursor line. Defaults to the user’s theme CursorLine color if `nil` |
 
-### Usage
+## Usage
 `<C-t>` toggles the floating window<br>
 `<CR>` closes the window and opens the file at the TODO’s line.<br>
 `<Esc>` or `q` close the window
