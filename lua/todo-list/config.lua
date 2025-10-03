@@ -9,9 +9,11 @@ M.defaults = {
         "dist/*",
         "build/*",
     },
-    show_line_numbers = false,
+    line_numbers = false,
+    relative_line_numbers = false,
     padding_left = 2,
-    highlight_line = true
+    highlight_line = true,
+    highlight_line_bg = "#2e2e2e",
 }
 
 -- Store active options
