@@ -30,6 +30,10 @@ function M.render(todos_by_file)
         for _, t in ipairs(todos) do
             local ext, lnum, todo_text = t:match("^(.-):(%d+):%s*(.*)$")
             if ext and lnum and todo_text then
+		local start_idx = todo_text:find("TODO")
+		if start_idx then
+		    todo_text = todo_text:sub(start_idx)
+		end
                 local line = pad_left .. string.format("%s:%s: %s", ext, lnum, todo_text)
                 table.insert(display_lines, line)
                 line_to_file[#display_lines] = { file = filepath, line = tonumber(lnum) }
