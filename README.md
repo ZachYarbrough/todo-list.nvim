@@ -1,9 +1,9 @@
 # 📝 Todo List
 Organize and navigate all TODOs directly from the source code, in a floating, read-only buffer. Highlights each TODO with its file, line number, and supports multiple languages. Jump directly to TODO locations with ease.
 
-<video autoplay loop muted playsinline width="600">
-  <source src="https://github.com/ZachYarbrough/todo-list.nvim/raw/assets/todo-list-demo.mp4" type="video/mp4">
-</video>
+<p align="center">
+  <img src="https://github.com/ZachYarbrough/todo-list.nvim/raw/assets/todo-list-demo.gif" width="800">
+</p>
 
 ### Features:
 - Floating window showing all project TODO comments.
