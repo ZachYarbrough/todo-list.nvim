@@ -10,19 +10,14 @@ function M.setup(opts)
         M.show_todos()
     end, {})
 
-    -- Call ui.toggle directly instead of through M.toggle
     vim.keymap.set("n", "<C-t>", function()
-        require("todo-list.ui").toggle()
+        ui.toggle()
     end, { noremap = true, silent = true })
 end
 
 function M.show_todos(root)
     local todos = search.scan(root)
     ui.render(todos)
-end
-
-function M.toggle()
-    ui.toggle()
 end
 
 return M
