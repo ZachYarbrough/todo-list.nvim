@@ -1,5 +1,8 @@
 local M = {}
 
+local ok, hl = pcall(vim.api.nvim_get_hl, 0, { name = "CursorLine" })
+local default_cursorline_bg = (ok and hl.bg) and string.format("#%06x", hl.bg) or "#2e2e2e"
+
 M.defaults = {
     blacklist = {
         "node_modules/*",
@@ -9,11 +12,10 @@ M.defaults = {
         "dist/*",
         "build/*",
     },
-    line_numbers = false,
-    relative_line_numbers = false,
+    line_number_mode = "none", -- "none", "absolute", "realtive"
     padding_left = 2,
-    highlight_line = true,
-    highlight_line_bg = "#2e2e2e",
+    cursorline = true,
+    cursorline_bg = default_cursorline_bg,
 }
 
 -- Store active options

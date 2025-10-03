@@ -71,16 +71,26 @@ function M.render(todos_by_file)
         end
     end
 
-    vim.wo[state.win].cursorline = config.options.highlight_line
+    vim.wo[state.win].cursorline = config.options.cursorline
 
-    if config.options.highlight_line then
+    if config.options.cursorline then
 	vim.wo[win].cursorline = true
-	vim.cmd(string.format("highlight TodoCursorLine guibg=%s", config.options.highlight_line_bg))
+	vim.cmd(string.format("highlight TodoCursorLine guibg=%s", config.options.cursorline_bg))
 	vim.wo[win].winhighlight = "CursorLine:TodoCursorLine"
     end
 
-    vim.wo[win].number = config.options.line_numbers or config.options.relative_line_numbers
-    vim.wo[win].relativenumber = config.options.relative_line_numbers
+    -- Enable/Disable absolute and realtive line numbers
+    if config.options.line_number_mode == "absolute" then
+	vim.wo[win].number = true
+	vim.wo[win].relativenumber = false
+    elseif config.options.line_number_mode == "relative" then
+	vim.wo[win].number = true
+	vim.wo[win].relativenumber = true
+    else
+	vim.wo[win].number = false
+	vim.wo[win].relativenumber = false
+    end
+
     vim.wo[win].signcolumn = "no"
     vim.wo[win].foldcolumn = "0"
 
